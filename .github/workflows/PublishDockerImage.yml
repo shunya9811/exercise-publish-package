@@ -1,18 +1,9 @@
-# このワークフローはGitHubによって認定されていないアクションを使用します。
-# それらはサードパーティによって提供され、
-# 別個の利用規約、プライバシーポリシー、
-# ドキュメントを参照してください。
-
-# GitHub では、コミット SHA にアクションをピン留めすることが推奨されます。
-# 新しいバージョンを取得するには、SHA を更新する必要があります。
-# タグまたはブランチを参照することもできますが、アクションは警告なしに変更される可能性があります。
-
 name: Publish Docker image
 
 on:
-  release:
-    types: [published]
-
+  push:
+    branches: main
+    
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
